@@ -13,7 +13,10 @@ from PIL import Image
 import imagehash
 
 # ========= إعداداتك =========
-TOKEN = os.getenv("8238079714:AAGb-G4FTgF--cPMwJbXd1W19w-4y_zPZy8")  # ضع التوكن في Railway Variables باسم BOT_TOKEN
+TOKEN = os.getenv("BOT_TOKEN")
+if not TOKEN:
+    raise RuntimeError("BOT_TOKEN is missing. Please set BOT_TOKEN in Railway Variables.")
+
 ADMIN_CODE = os.getenv("ADMIN_CODE", "1235812358")  # اختياري: تقدر تغيّره من Variables
 
 WELCOME_TEXT_DEFAULT = """مرحبا بك انا كلوفر و مساعد في مجموعة الفرسان مجموعة بطولات و رومات بين الاعضاء ون بيس فايتينغ باث
